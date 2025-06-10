@@ -134,20 +134,20 @@ bool GameItem::setValue(const double& value) {
     return false;
 }
 
-std::string rarityToString(Rarity rarity) {
+std::string GameItem::rarityToString(Rarity rarity) {
     switch (rarity) {
-        case NONE:      return "\033[90mN/A\033[0m";        // Gray
-        case COMMON:    return "\033[32mCOMMON\033[0m";     // Green
-        case RARE:      return "\033[34mRARE\033[0m";       // Blue
-        case EPIC:      return "\033[35mEPIC\033[0m";       // Magenta
-        case LEGENDARY: return "\033[33mLEGENDARY\033[0m";  // Yellow
+        case NONE:      return "\033[90mN/A\033[0m";
+        case COMMON:    return "\033[32mCOMMON\033[0m";
+        case RARE:      return "\033[34mRARE\033[0m";
+        case EPIC:      return "\033[35mEPIC\033[0m";
+        case LEGENDARY: return "\033[33mLEGENDARY\033[0m";
         default:        return "\033[90mUNKNOWN\033[0m";
     }
 }
 
 
 std::ostream& operator<<(std::ostream& os, const GameItem& item) {
-    os << item.name_ << " (" << rarityToString(item.rarity_) << ")\n";
+    os << item.name_ << " (" << GameItem::rarityToString(item.rarity_) << ")\n";
     os << item.description_ << "\n";
     os << "Weight: " << item.weight_
        << "     |     Value: " << item.value_;
