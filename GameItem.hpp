@@ -35,12 +35,13 @@ public:
     friend std::ostream& operator<<(std::ostream& os, const GameItem& item);
 
     bool operator==(const GameItem& other) const;
+
     bool operator<(const GameItem& other) const;
+
+    static std::string rarityToString(Rarity rarity);
+
+
 };
-
-
-static std::string rarityToString(Rarity rarity);
-
 
 #endif // GAMEITEM_HPP
 
