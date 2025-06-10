@@ -39,7 +39,8 @@ public:
 };
 
 
-std::string rarityToString(Rarity rarity);
+static std::string rarityToString(Rarity rarity);
+
 
 #endif // GAMEITEM_HPP
 
