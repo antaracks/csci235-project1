@@ -141,7 +141,7 @@
 
 //Setter for weight, checks if the weight is greater than zero
     bool GameItem::setWeight(const double& weight) {
-        if (weight > 0) { //Checks if weight is greater than zero
+        if (weight >= 0) { //Checks if weight is greater than zero
             this->weight_ = weight;
             return true; // Weight is valid
         } else {
