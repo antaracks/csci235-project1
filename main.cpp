@@ -1,21 +1,59 @@
-#include <iostream>
-#include "GameItem.hpp"
+/**
+ * MAIN file --> main
+ * Name --> Antara Ibnath
+ * Email ---> antara.ibnath08@myhunter.cuny.edu
+ * This main file is to test for GameItem class
+ * Date --> 2025-06-10
+ *  I wanted to make it clear, I used W3SCHOOLS a online website that teaches
+ *  programming languages
+ * as a refrence/ medium to study / if i had issues with my logic
+ * 
+ * I based my main on my favorite game SIMS 4, they had a feature where sims can dig for different crystals throughout the different worlds
+ * and sims can collect them, and they have different rarities, weights, and values, and sell them if they want.
+ * I tested all enum values based on the difernt crystals you can find
+ * 
+ * 
+ */
 
-int main() {
-    // Test 1: Full constructor with all valid values
-    GameItem item1("Hammer", "Used for building", COMMON, 5, 10);
+
+
+#include "GameItem.hpp"  // Include the header file for GameItem class
+#include <iostream>  // for std::cout
+#include <string>  // for std::string
+#include <cctype>  // for std::isupper
+
+int main () {
+
+    // Create instances of GameItem with different attributes
+    // and print their details to the console
+
+
+    //// Default none item with no attributes
+    GameItem item1("Rock", "A humble hunk of earth found almost anywhere.", NONE, 0, 0);
     std::cout << item1 << "\n";
-    std::cout << "-------------------------------------------\n";
+    std::cout << "---------------------------------------------\n";
 
-    // Test 2: Full constructor with some valid, some invalid values
-    GameItem item2("NONE", "This item has no description.", NONE, 1000, 0);
+    // Common item with basic attributes
+    GameItem item2("Quartz", "A sparkling, rose-hued crystal often found gleaming in the wilds of Oasis Springs!", COMMON, 73, 25);
     std::cout << item2 << "\n";
-    std::cout << "-------------------------------------------\n";
+    std::cout << "---------------------------------------------\n";
 
-    // Test 3: Full constructor with some invalid arguments
-    GameItem item3("Stone Axe", "Notice how only the invalid arguments take default values!", COMMON, -3, 100);
+    // Rare item with more valuable attributes
+    GameItem item3("Hematite", "A metallic crystal with a mysterious gleam, often buried in the shadows of rare dig sites like those in Forgotten Grotto.", RARE, 1.5, 125);
     std::cout << item3 << "\n";
-    std::cout << "-------------------------------------------\n";
+    std::cout << "---------------------------------------------\n";
+
+    // Epic item with high value and weight
+    GameItem item4("Crandestine", "An elusive, otherworldly crystal that rarely surfaces from deep, secret dig sites, glowing with mysterious iridescence.", EPIC, 1.5, 500);
+    std::cout << item4 << "\n";
+    std::cout << "---------------------------------------------\n";
+
+    // Legendary item with the highest rarity and value
+    GameItem item5("Rainborz", "A radiant, ultra-rare crystal that sparkles with every color of the rainbow, often hidden in far-flung dig sites like Sixam.", LEGENDARY, 3.7, 7500);
+    std::cout << item5 << "\n";
+    std::cout << "---------------------------------------------\n";
 
     return 0;
 }
+
+
