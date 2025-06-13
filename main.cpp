@@ -8,22 +8,23 @@
  *  programming languages
  * as a refrence/ medium to study / if i had issues with my logic
  * 
- * I based my main on my favorite game SIMS 4, they had a feature where sims can dig for different crystals throughout the different worlds
+ * Since there wasnt a concrete list of items that we need to include I based my main on my favorite game SIMS 4, 
+ * they had a feature where sims can dig for different crystals throughout the different worlds
  * and sims can collect them, and they have different rarities, weights, and values, and sell them if they want.
  * I tested all enum values based on the difernt crystals you can find
  * 
- * 
+ * I tested both programs on the same main since my computer will override 2 mains
  */
 
 
-
+#include "Inventory.hpp" // Include the header file for Inventory class
 #include "GameItem.hpp"  // Include the header file for GameItem class
 #include <iostream>  // for std::cout
 #include <string>  // for std::string
 #include <cctype>  // for std::isupper
 
 int main () {
-
+    //TESTING TASK A
     // Create instances of GameItem with different attributes
     // and print their details to the console
 
@@ -53,7 +54,44 @@ int main () {
     std::cout << item5 << "\n";
     std::cout << "---------------------------------------------\n";
 
+
+    //TESTING TASK B
+
+    Inventory<std::string> bag;
+
+    // Test: Add items
+    bag.addItem("Ruby");
+    bag.addItem("Rainborz");
+    bag.addItem("Quartz");  
+
+    //using for loop to go through items and get the size
+    std::cout << "Items in bag: ";
+    for (int i = 0; i < bag.getSize(); ++i) {
+        std::cout << bag.getItems()[i] << " ";
+    }
+    std::cout << std::endl;
+
+    //Testing the getter for size and capacity
+    std::cout << "Size: " << bag.getSize() << std::endl;
+    std::cout << "Capacity: " << bag.getCapacity() << std::endl;
+
+    //Testing the getter for index
+    std::cout << "Index of 'Rainborz': " << bag.getIndexOf("Rainborz") << std::endl;
+    std::cout << "Index of 'Orange Topaz' (not in bag): " << bag.getIndexOf("Orange Topaz") << std::endl; //test a case where the item isn’t found in the inventory.
+
+
+    //Testing the removeItem function
+    std::cout << "Removing 'Ruby': " << (bag.removeItem("Ruby") ? "Success" : "Fail") << std::endl;
+    std::cout << "Removing 'Orange Topaz': " << (bag.removeItem("Orange Topaz") ? "Success" : "Fail") << std::endl;
+
+    std::cout << "Items in bag after removal: ";
+    for (int i = 0; i < bag.getSize(); ++i) {
+        std::cout << bag.getItems()[i] << " ";
+    }
+    std::cout << std::endl;
+
     return 0;
 }
+
 
 
