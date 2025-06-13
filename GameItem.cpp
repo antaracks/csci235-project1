@@ -151,7 +151,7 @@
 
 //Setter for value, checks if the value is greater than zero
     bool GameItem::setValue(const double& value) {
-        if (value > 0) { //Checks if value is greater than zero
+        if (value >= 0) { //Checks if value is greater than zero
             this->value_ = value;
             return true; // Value is valid
         } else {
