@@ -2,7 +2,7 @@
  * CPP file --> GameTime
  * Name --> Antara Ibnath
  * Email ---> antara.ibnath08@myhunter.cuny.edu
- * This file is the interface for GameItem class
+ * This file is the implementation for GameItem class
  * Date --> 2025-06-10
  *  I wanted to make it clear, I used W3SCHOOLS a online website that teaches
  *  programming languages
