@@ -207,13 +207,13 @@ std::string GameItem::rarityToString() const {
 //Friend Function, used for formatting
 
 
-std::ostream& operator<<(std::ostream& os, const GameItem& item) {  
+std::ostream& operator<<(std::ostream& os, const GameItem& item) {
     //function signature
     os << item.name_ << "(" << item.rarityToString() << ")\n";    
     //Prints the name of the item, followed by the rarity, in parentheses
-    os << item.description_ << "\n"; 
+    os << item.description_ << "\n";
      //Prints the description on the next line.
-    os << "Weight: " << item.weight_ << "     |     Value: " << item.value_; 
+    os << "Weight: " << item.weight_ << "     |     Value: " << item.value_ << "\n";
     //Prints the weight and value in a single line, seperated by a pipe
     return os;
 }
